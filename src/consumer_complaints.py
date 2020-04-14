@@ -1,8 +1,13 @@
 import csv
 import datetime
+from sys import argv
+
+files = sys.argv[1:]
+input_file = files[0]
+output_file = files[1]
 
 # Load
-with open('.\input\complaints.csv', 'rb') as _file:
+with open(files[0], 'rb') as _file:
     data = list(csv.reader(_file))
 
 # List of Product
@@ -53,7 +58,7 @@ for i in range(len(output)):
         output[i][0] = '"' + output[i][0] + '"'
 
 # Create CSV
-with open('./output/report.csv','wb') as file:
+with open(files[1],'wb') as file:
     for sublist in output:
         for item in sublist:
             file.write(str(item) + ',')
