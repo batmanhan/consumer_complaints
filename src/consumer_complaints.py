@@ -1,5 +1,6 @@
 import csv
 import datetime
+import sys
 from sys import argv
 
 files = sys.argv[1:]
